@@ -5,3 +5,34 @@
 .metric-grid{grid-template-columns:repeat(5,1fr)}
 @media(max-width:1100px){.metric-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:900px){.metric-grid{grid-template-columns:repeat(2,1fr)}}
+
+.study-summary{margin-top:18px;border:1px solid var(--line);background:var(--surface);padding:20px 22px;display:grid;grid-template-columns:minmax(220px,1fr) auto auto auto;align-items:center;gap:28px}
+.study-summary h2{font:600 17px var(--heading);margin:0 0 5px}
+.study-summary p:last-child{margin:0;color:var(--muted);font-size:12px}
+.study-summary-count{border-left:1px solid var(--line);padding-left:25px}
+.study-summary-count strong{display:block;font:600 22px var(--heading)}
+.study-summary-count span{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+.study-form{max-width:none;margin-bottom:26px}
+.study-filters select{flex:1}
+.study-list{display:flex;flex-direction:column;gap:14px}
+.study-card{background:var(--surface);border:1px solid var(--line)}
+.study-card-main{padding:23px}
+.card-tools{display:flex;gap:3px}
+.study-card h3{font:600 20px var(--heading);margin:17px 0 5px}
+.study-meta{margin:0;color:#706c65;font-size:11px;text-transform:uppercase}
+.study-copy{color:#aaa69d;font-size:13px;line-height:1.6;margin:16px 0}
+.key-detail{background:#1d1918;border-left:2px solid var(--gold);padding:12px 14px;margin-top:17px}
+.key-detail span,.study-details span{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--gold)}
+.key-detail p,.study-details p{color:#aaa59d;font-size:12px;line-height:1.55;margin:5px 0 0;white-space:pre-line}
+.study-details{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:18px}
+.study-details>div{border-top:1px solid var(--line);padding-top:13px}
+.study-actions{border-top:1px solid var(--line);padding:13px 22px;display:flex;align-items:center;justify-content:space-between}
+.study-actions .secondary{text-decoration:none;padding:8px 11px}
+.text-button:disabled{color:#666;cursor:default}
+.status-badge{font-size:9px;letter-spacing:.65px;text-transform:uppercase;padding:4px 7px;border:1px solid #4a4640;color:#aaa49a;margin-right:6px}
+.status-drill-this{border-color:#7b5530;color:#dbad70}
+.status-tested-in-sparring{border-color:#5d576f;color:#aea5d2}
+.status-integrated{border-color:#3f6653;color:#7fc39e}
+.status-discarded{opacity:.55}
+@media(max-width:900px){.study-summary{grid-template-columns:1fr 1fr}.study-summary>div:first-child{grid-column:1/-1}.study-details{grid-template-columns:1fr}}
+@media(max-width:700px){.study-summary{grid-template-columns:1fr 1fr;gap:18px}.study-summary .text-button{grid-column:1/-1}.study-summary-count{padding-left:14px}.study-card-main{padding:18px}.study-actions{align-items:stretch;flex-direction:column;gap:14px}.study-actions .text-button{justify-content:center}}

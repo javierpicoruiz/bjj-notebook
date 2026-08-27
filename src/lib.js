@@ -1,8 +1,19 @@
 export const POSITIONS = ['Standing', 'Closed guard', 'Open guard', 'Half guard', 'Side control', 'Mount', 'Back', 'Turtle', 'Leg entanglement']
 export const TECHNIQUE_TYPES = ['Takedown', 'Sweep', 'Pass', 'Submission', 'Escape', 'Control', 'Transition', 'Defence']
+export const STUDY_TYPES = ['Technique', 'Concept', 'Troubleshooting', 'Strategy', 'Match study', 'Seminar']
+export const STUDY_STATUSES = ['To watch', 'Watched', 'Drill this', 'Tested in sparring', 'Integrated', 'Discarded']
 export const SESSION_TYPES = ['Class', 'Sparring', 'Open mat', 'Private', 'Competition']
 export const OPPONENT_TYPES = ['Stronger', 'Faster', 'Wrestler', 'Flexible', 'Pressure passer', 'Guard player', 'Beginner', 'Advanced']
-export const initialData = { sessions: [], techniques: [], sparring: [], gamePlan: { aGame: '', bGame: '', emergencies: '', competition: '' } }
+export const initialData = { sessions: [], techniques: [], sparring: [], study: [], gamePlan: { aGame: '', bGame: '', emergencies: '', competition: '' } }
+export const normalizeData = (value = {}) => ({
+  ...initialData,
+  ...value,
+  sessions: Array.isArray(value.sessions) ? value.sessions : [],
+  techniques: Array.isArray(value.techniques) ? value.techniques : [],
+  sparring: Array.isArray(value.sparring) ? value.sparring : [],
+  study: Array.isArray(value.study) ? value.study : [],
+  gamePlan: { ...initialData.gamePlan, ...(value.gamePlan || {}) },
+})
 export const today = () => new Date().toISOString().slice(0, 10)
 export const uid = () => `${Date.now()}-${Math.random().toString(16).slice(2)}`
 export const titleCase = (value = '') => value.charAt(0).toUpperCase() + value.slice(1)
